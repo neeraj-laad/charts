@@ -3,5 +3,10 @@ data:
   key.json: ''
 kind: Secret
 metadata:
+  labels: {{ include "labels" . | nindent 4 }} {{ cat "app:" .Chart.Name | nindent 4 }}
   name: gcppubsub-source-key
+spec:
+  template:
+    metadata:
+      labels: {{ include "noVersionlabels" . | nindent 8 }} {{ cat "app:" .Chart.Name | nindent 8 }}
 type: Opaque

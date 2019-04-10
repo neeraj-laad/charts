@@ -1,16 +1,17 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  labels:
-    addonmanager.kubernetes.io/mode: Reconcile
-    app: elasticsearch-logging
-    kubernetes.io/cluster-service: 'true'
+  labels: {{ include "labels" . | nindent 4 }} {{ "addonmanager.kubernetes.io/mode: Reconcile" | nindent 4 }} {{ cat "app: elasticsearch-logging," .Chart.Name | nindent 4 }} {{ "kubernetes.io/cluster-service: true" | nindent 4 }}
   name: elasticsearch-logging
   namespace: knative-monitoring
 roleRef:
   apiGroup: ''
   kind: ClusterRole
   name: elasticsearch-logging
+spec:
+  template:
+    metadata:
+      labels: {{ include "noVersionlabels" . | nindent 8 }} {{ cat "app:" .Chart.Name | nindent 8 }}
 subjects:
 - apiGroup: ''
   kind: ServiceAccount

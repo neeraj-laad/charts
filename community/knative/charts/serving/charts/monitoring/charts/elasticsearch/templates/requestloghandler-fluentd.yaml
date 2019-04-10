@@ -1,9 +1,11 @@
 apiVersion: config.istio.io/v1alpha2
 kind: fluentd
 metadata:
-  labels:
-    serving.knative.dev/release: devel
+  labels: {{ include "labels" . | nindent 4 }} {{ "serving.knative.dev/release: devel" | nindent 4 }} {{ cat "app:" .Chart.Name | nindent 4 }}
   name: requestloghandler
   namespace: istio-system
 spec:
   address: fluentd-ds.knative-monitoring:24224
+  template:
+    metadata:
+      labels: {{ include "noVersionlabels" . | nindent 8 }} {{ cat "app:" .Chart.Name | nindent 8 }}
