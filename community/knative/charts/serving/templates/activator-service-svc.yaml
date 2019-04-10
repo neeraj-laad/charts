@@ -22,7 +22,4 @@ spec:
     targetPort: 9090
   selector:
     app: activator
-  template:
-    metadata:
-      labels: {{ include "noVersionlabels" . | nindent 8 }} {{ cat "app:" .Chart.Name | nindent 8 }}
   type: {{ .Values.activatorService.type }}

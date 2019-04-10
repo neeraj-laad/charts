@@ -9,6 +9,3 @@ spec:
   - port: 443
   selector:
     control-plane: controller-manager
-  template:
-    metadata:
-      labels: {{ include "noVersionlabels" . | nindent 8 }} {{ cat "app:" .Chart.Name | nindent 8 }}

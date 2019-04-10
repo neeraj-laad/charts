@@ -12,6 +12,3 @@ spec:
     - revisionrequestduration.metric
     - revisionrequestsize.metric
     - revisionresponsesize.metric
-  template:
-    metadata:
-      labels: {{ include "noVersionlabels" . | nindent 8 }} {{ cat "app:" .Chart.Name | nindent 8 }}

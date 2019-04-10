@@ -6,6 +6,3 @@ metadata:
   namespace: knative-serving
 spec:
   image: {{ .Values.queueProxy.image }}
-  template:
-    metadata:
-      labels: {{ include "noVersionlabels" . | nindent 8 }} {{ cat "app:" .Chart.Name | nindent 8 }}

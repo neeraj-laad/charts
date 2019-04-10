@@ -6,6 +6,3 @@ metadata:
   namespace: istio-system
 spec:
   address: fluentd-ds.knative-monitoring:24224
-  template:
-    metadata:
-      labels: {{ include "noVersionlabels" . | nindent 8 }} {{ cat "app:" .Chart.Name | nindent 8 }}

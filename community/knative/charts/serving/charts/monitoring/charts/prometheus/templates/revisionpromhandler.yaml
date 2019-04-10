@@ -74,6 +74,3 @@ spec:
     - destination_service
     - response_code
     name: revision_response_size
-  template:
-    metadata:
-      labels: {{ include "noVersionlabels" . | nindent 8 }} {{ cat "app:" .Chart.Name | nindent 8 }}

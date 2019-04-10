@@ -10,6 +10,3 @@ spec:
     targetPort: 443
   selector:
     role: build-webhook
-  template:
-    metadata:
-      labels: {{ include "noVersionlabels" . | nindent 8 }} {{ cat "app:" .Chart.Name | nindent 8 }}

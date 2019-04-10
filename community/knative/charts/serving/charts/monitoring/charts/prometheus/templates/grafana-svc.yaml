@@ -11,7 +11,4 @@ spec:
     targetPort: 3000
   selector:
     app: grafana
-  template:
-    metadata:
-      labels: {{ include "noVersionlabels" . | nindent 8 }} {{ cat "app:" .Chart.Name | nindent 8 }}
   type: {{ .Values.grafana.type }}

@@ -7,9 +7,6 @@ metadata:
 spec:
   monitored_resource_type: '"UNSPECIFIED"'
   severity: '"Info"'
-  template:
-    metadata:
-      labels: {{ include "noVersionlabels" . | nindent 8 }} {{ cat "app:" .Chart.Name | nindent 8 }}
   timestamp: request.time
   variables:
     destinationConfiguration: destination.labels["serving.knative.dev/configuration"] | "unknown"

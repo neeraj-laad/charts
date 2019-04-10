@@ -23,7 +23,3 @@ rules:
   - configmaps
   verbs:
   - get
-spec:
-  template:
-    metadata:
-      labels: {{ include "noVersionlabels" . | nindent 8 }} {{ cat "app:" .Chart.Name | nindent 8 }}

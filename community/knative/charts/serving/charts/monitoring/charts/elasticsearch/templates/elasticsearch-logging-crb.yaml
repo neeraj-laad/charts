@@ -8,10 +8,6 @@ roleRef:
   apiGroup: ''
   kind: ClusterRole
   name: elasticsearch-logging
-spec:
-  template:
-    metadata:
-      labels: {{ include "noVersionlabels" . | nindent 8 }} {{ cat "app:" .Chart.Name | nindent 8 }}
 subjects:
 - apiGroup: ''
   kind: ServiceAccount

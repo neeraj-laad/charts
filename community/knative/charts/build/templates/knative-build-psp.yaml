@@ -1,7 +1,6 @@
 apiVersion: policy/v1beta1
 kind: PodSecurityPolicy
 metadata:
-  labels: {{ include "labels" . | nindent 4 }} {{ cat "app:" .Chart.Name | nindent 4 }}
   name: knative-build
 spec:
   allowPrivilegeEscalation: false
@@ -23,9 +22,6 @@ spec:
     - max: 65535
       min: 1
     rule: MustRunAs
-  template:
-    metadata:
-      labels: {{ include "noVersionlabels" . | nindent 8 }} {{ cat "app:" .Chart.Name | nindent 8 }}
   volumes:
   - configMap
   - secret

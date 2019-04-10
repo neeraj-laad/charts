@@ -12,7 +12,4 @@ spec:
     protocol: TCP
   selector:
     app: node-exporter
-  template:
-    metadata:
-      labels: {{ include "noVersionlabels" . | nindent 8 }} {{ cat "app:" .Chart.Name | nindent 8 }}
   type: {{ .Values.nodeExporter.type }}

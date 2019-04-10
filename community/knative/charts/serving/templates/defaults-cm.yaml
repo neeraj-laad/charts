@@ -47,7 +47,3 @@ metadata:
   labels: {{ include "labels" . | nindent 4 }} {{ "serving.knative.dev/release: devel" | nindent 4 }} {{ cat "app:" .Chart.Name | nindent 4 }}
   name: config-defaults
   namespace: knative-serving
-spec:
-  template:
-    metadata:
-      labels: {{ include "noVersionlabels" . | nindent 8 }} {{ cat "app:" .Chart.Name | nindent 8 }}

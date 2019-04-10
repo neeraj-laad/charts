@@ -14,7 +14,4 @@ spec:
     response_code: response.code | 200
     source_k8s_service: source.service | "unknown"
   monitored_resource_type: '"UNSPECIFIED"'
-  template:
-    metadata:
-      labels: {{ include "noVersionlabels" . | nindent 8 }} {{ cat "app:" .Chart.Name | nindent 8 }}
   value: response.duration | "0ms"

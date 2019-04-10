@@ -3,7 +3,3 @@ kind: Namespace
 metadata:
   labels: {{ include "labels" . | nindent 4 }} {{ "istio-injection: enabled" | nindent 4 }} {{ cat "app:" .Chart.Name | nindent 4 }}
   name: knative-eventing
-spec:
-  template:
-    metadata:
-      labels: {{ include "noVersionlabels" . | nindent 8 }} {{ cat "app:" .Chart.Name | nindent 8 }}

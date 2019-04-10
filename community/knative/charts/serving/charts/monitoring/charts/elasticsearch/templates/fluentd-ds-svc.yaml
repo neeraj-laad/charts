@@ -16,6 +16,3 @@ spec:
     targetPort: 24224
   selector:
     app: fluentd-ds
-  template:
-    metadata:
-      labels: {{ include "noVersionlabels" . | nindent 8 }} {{ cat "app:" .Chart.Name | nindent 8 }}

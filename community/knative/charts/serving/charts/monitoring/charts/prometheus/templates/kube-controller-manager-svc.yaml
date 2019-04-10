@@ -13,7 +13,4 @@ spec:
     targetPort: 10252
   selector:
     k8s-app: kube-controller-manager
-  template:
-    metadata:
-      labels: {{ include "noVersionlabels" . | nindent 8 }} {{ cat "app:" .Chart.Name | nindent 8 }}
   type: {{ .Values.kubeControllerManager.type }}

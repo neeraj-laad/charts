@@ -27,10 +27,5 @@ data:
     \n    ]\n  },\n  \"timezone\": \"browser\",\n  \"title\": \"Kubernetes Cluster Status\",\n  \"version\": 3\n}\n"
 kind: ConfigMap
 metadata:
-  labels: {{ include "labels" . | nindent 4 }} {{ cat "app:" .Chart.Name | nindent 4 }}
   name: grafana-dashboard-definition-kubernetes-cluster-status
   namespace: knative-monitoring
-spec:
-  template:
-    metadata:
-      labels: {{ include "noVersionlabels" . | nindent 8 }} {{ cat "app:" .Chart.Name | nindent 8 }}

@@ -14,7 +14,4 @@ spec:
   selector:
     app: prometheus
   sessionAffinity: None
-  template:
-    metadata:
-      labels: {{ include "noVersionlabels" . | nindent 8 }} {{ cat "app:" .Chart.Name | nindent 8 }}
   type: {{ .Values.prometheusSystemDiscovery.type }}

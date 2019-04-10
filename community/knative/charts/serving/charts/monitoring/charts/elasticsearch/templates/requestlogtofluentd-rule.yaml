@@ -10,6 +10,3 @@ spec:
     instances:
     - requestlog.logentry
   match: context.protocol == "http" || context.protocol == "grpc"
-  template:
-    metadata:
-      labels: {{ include "noVersionlabels" . | nindent 8 }} {{ cat "app:" .Chart.Name | nindent 8 }}

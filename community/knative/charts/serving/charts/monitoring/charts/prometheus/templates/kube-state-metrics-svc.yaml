@@ -17,6 +17,3 @@ spec:
     targetPort: https-self
   selector:
     app: kube-state-metrics
-  template:
-    metadata:
-      labels: {{ include "noVersionlabels" . | nindent 8 }} {{ cat "app:" .Chart.Name | nindent 8 }}

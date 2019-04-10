@@ -11,6 +11,3 @@ spec:
     targetPort: db
   selector:
     app: elasticsearch-logging
-  template:
-    metadata:
-      labels: {{ include "noVersionlabels" . | nindent 8 }} {{ cat "app:" .Chart.Name | nindent 8 }}
