@@ -1,6 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: DaemonSet
 metadata:
+  labels: {{ include "labels" . | nindent 4 }} {{ cat "app:" .Chart.Name | nindent 4 }}
   name: node-exporter
   namespace: knative-monitoring
 spec:

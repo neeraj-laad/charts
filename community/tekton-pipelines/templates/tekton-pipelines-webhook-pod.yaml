@@ -1,6 +1,7 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
+  labels: {{ include "labels" . | nindent 4 }} {{ cat "app:" .Chart.Name | nindent 4 }}
   name: tekton-pipelines-webhook
   namespace: tekton-pipelines
 spec:
