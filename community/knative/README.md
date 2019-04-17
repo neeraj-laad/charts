@@ -178,7 +178,7 @@ The command removes all the Kubernetes components associated with the chart and 
 
 ## Limitations
 
-Look inside each subchart to view the their limitations.
+Namespaces are not configurable
 
 ## Documentation
 
