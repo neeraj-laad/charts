@@ -8,7 +8,7 @@ spec:
   replicas: {{ .Values.tektonPipelinesController.replicas }}
   template:
     metadata:
-      labels: {{ include "noVersionlabels" . | nindent 8 }} {{ cat "app: tekton-pipelines-controller," .Chart.Name | nindent 8 }}
+      labels: {{ include "noVersionlabels" . | nindent 8 }} {{ "app: \"tekton-pipelines-controller\"" | nindent 8 }}
     spec:
       containers:
       - args:
