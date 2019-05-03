@@ -1,0 +1,35 @@
+__metadata: {}
+tektonPipelinesController:
+  __metadata: {}
+  image:
+    __metadata:
+      description: ''
+      hidden: true
+      immutable: true
+      label: ''
+      required: true
+      type: string
+  replicas:
+    __metadata:
+      description: ''
+      label: ''
+      type: number
+tektonPipelinesWebhook:
+  __metadata: {}
+  replicas:
+    __metadata:
+      description: ''
+      label: ''
+      type: number
+  webhook:
+    __metadata:
+      description: ''
+      label: ''
+    image:
+      __metadata:
+        description: ''
+        hidden: true
+        immutable: true
+        label: ''
+        required: true
+        type: string
