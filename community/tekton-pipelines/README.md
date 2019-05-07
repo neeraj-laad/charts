@@ -21,7 +21,7 @@ In its default configuration, this chart will create the following Kubernetes re
 
 ### Container image security requirements
 
-If Container Image Security is enabled, you will not be able to download non-trusted container images. If this is the case, please add the following to the trusted registries at the cluster level, so that knative container images can be pulled during chart installation:
+If Container Image Security is enabled, you will not be able to download non-trusted container images. If this is the case, please add the following to the trusted registries at the cluster level, so that Tekton container images can be pulled during chart installation:
 
 - gcr.io/tekton-releases/github.com/tektoncd/pipeline/*
 
@@ -40,7 +40,8 @@ $ kubectl apply -f https://raw.githubusercontent.com/IBM/charts/master/community
 2. Install the chart using helm cli:
 
 ```bash
-$ helm install ./tekton-pipelines --name <my-release> [--tls]
+$ helm repo add ibm-community-charts https://raw.githubusercontent.com/IBM/charts/master/repo/community
+$ helm install ibm-community-charts/tekton-pipelines --name <my-release> [--tls]
 ```
 
 The command deploys tekton-pipelines on the Kubernetes cluster in the default configuration.  The [configuration](#configuration) section lists the parameters that can be configured during installation.
