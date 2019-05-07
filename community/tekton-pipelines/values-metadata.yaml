@@ -1,6 +1,4 @@
-__metadata: {}
 tektonPipelinesController:
-  __metadata: {}
   image:
     __metadata:
       description: ''
@@ -11,20 +9,16 @@ tektonPipelinesController:
       type: string
   replicas:
     __metadata:
-      description: ''
-      label: ''
+      description: Number of replica pods for Tekton Pipelines Controller
+      label: Tekton Pipelines Controller replicas
       type: number
 tektonPipelinesWebhook:
-  __metadata: {}
   replicas:
     __metadata:
-      description: ''
-      label: ''
+      description: Number of replica pods for Tekton Pipelines Webhook
+      label: Tekton Pipelines Webhook replicas
       type: number
   webhook:
-    __metadata:
-      description: ''
-      label: ''
     image:
       __metadata:
         description: ''
