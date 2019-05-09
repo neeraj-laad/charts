@@ -8,7 +8,7 @@ spec:
   replicas: {{ .Values.tektonPipelinesWebhook.replicas }}
   template:
     metadata:
-      labels: {{ include "noVersionlabels" . | nindent 8 }} {{ cat "app: tekton-pipelines-webhook," .Chart.Name | nindent 8 }}
+      labels: {{ include "noVersionlabels" . | nindent 8 }} {{ "app: \"tekton-pipelines-webhook\"" | nindent 8 }}
     spec:
       containers:
       - image: {{ .Values.tektonPipelinesWebhook.webhook.image }}
